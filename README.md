@@ -1,24 +1,15 @@
-# README
+# Contact Book
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ruby on rails app created to manage the contacts of a user.
 
-Things you may want to cover:
+Tech Specs:
 
-* Ruby version
+  * Ruby on Rails 5.2.3
+  * Postgress Database
+  * Materialize for the frontend.
 
-* System dependencies
+To Run It:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+  * bundle install
+  * rails db:setup
 * ...

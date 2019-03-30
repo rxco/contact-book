@@ -1,0 +1,36 @@
+.login-form {
+  max-width: 800px;
+  padding: 20px;
+
+  form {
+    margin: 0 auto;
+  }
+
+  .waves-button-input {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .auth-links {
+    cursor: pointer;
+  }
+
+}
+
+.error_explanation {
+  font-weight: 100;
+  font-size: 10px;
+
+  ul {
+    color: #d81b60;
+  }
+}
+
+.img-login {
+  background-image: image-url("login.png");
+  background-size: contain;
+  background-repeat-x: no-repeat;
+  background-position-x: center;
+  height: 600px;
+  max-width: 100%;
+}

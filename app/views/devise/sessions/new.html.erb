@@ -1,0 +1,41 @@
+<div class="container">
+<div class="row card-panel hoverable">
+<div class="col m6 s12">
+  <div class="row img-login"></div>
+</div>
+<div class="login-form col m6 s12">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "col s12") do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+  <div class="row center title">
+    <h4 class="teal-text text-lighten-2">Welcome</h4>
+    <p> Please sign in </p>
+  </div>
+  <div class="row">
+    &nbsp;
+  </div>
+  <div class="row">
+    <div class="input-field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"validate" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class: "validate" %>
+    </div>
+  </div>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="row">
+    <div class="input-field">
+    <%= f.submit "Log in", class: "btn btn-large waves-effect waves-light col s12 white-text" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>

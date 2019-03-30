@@ -1,0 +1,40 @@
+<div class="container">
+<div class="row card-panel hoverable">
+<div class="col m6 s12">
+  <div class="row img-login"></div>
+</div>
+<div class="login-form col m6 s12">
+<%= verify_authy_form do %>
+<div class="row center title">
+  <h4 class="teal-text text-lighten-2">Welcome</h4>
+  <p> <%= I18n.t('submit_token_title', {:scope => 'devise'}) %> </p>
+</div>
+<div class="row">
+  &nbsp;
+</div>
+<div class="row">
+  <div class="input-field">
+    <%= label_tag 'authy-token' %>
+    <%= text_field_tag :token, "", :autocomplete => :off, :id => 'authy-token' %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+  <%= submit_tag I18n.t('submit_token', {:scope => 'devise'}), :class => 'btn btn-large waves-effect waves-light col s12 white-text' %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+      <%= authy_request_sms_link %>
+  </div>
+</div>
+
+  <!-- Help tooltip -->
+  <!-- You need to configure a help message. -->
+  <!-- See documentation: https://github.com/authy/authy-form-helpers#help-tooltip -->
+  <!-- <%= link_to '?', '#', :id => 'authy-help' %> -->
+<% end %>
+
+</div>
+</div>
+</div>

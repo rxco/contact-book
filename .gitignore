@@ -1,0 +1,10 @@
+# Don't track content of these rails folders
+tmp/
+log/
+
+# Don't track editor files
+.idea/
+
+# Ignore OSX files
+.DS_Store
+.env

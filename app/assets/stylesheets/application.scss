@@ -1,0 +1,13 @@
+// Since materialize color scheme are declared in color.scss we should import
+// the color.scss first. then you can override color variable just like this
+@import "materialize/components/color-variables";
+$primary-color: color("teal", "lighten-2") !default;
+
+// Import Materialize Framework
+@import 'materialize';
+// Import Fonts
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+@import "**/*"

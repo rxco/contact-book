@@ -1,0 +1,4 @@
+$("#edit_contact_modal .modal-content").html("");
+$("#edit_contact_modal .modal-content").html("<%= escape_javascript(render partial: 'contacts/form',  :locals => { :contact => @contact } ) %>");
+M.updateTextFields();
+$("#edit_contact_modal").modal('open');

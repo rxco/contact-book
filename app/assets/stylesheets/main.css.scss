@@ -1,0 +1,40 @@
+.container-contacts {
+  font-weight: normal;
+  padding-left: 180px;
+
+  ul {
+    margin-right: -20%;
+  }
+}
+
+.profile-background2 {
+  background-image: image-url("profile_bkg.png");
+  background-size: contain;
+  background-repeat-x: no-repeat;
+  background-position-x: center;
+  max-height: 400px;
+  max-width: 100%;
+}
+
+.contact-links {
+  margin-top: 33px;
+}
+
+.avatar-img {
+  margin-left: 32px;
+  margin-top: 33px;
+}
+
+.collection .collection-item.avatar {
+    min-height: 160px;
+}
+
+@media only screen and (max-width : 992px) {
+  .container-contacts {
+    padding-left: 0px;
+
+    ul {
+      margin-right: auto;
+    }
+  }
+}

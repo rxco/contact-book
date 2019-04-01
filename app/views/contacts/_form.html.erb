@@ -1,0 +1,66 @@
+<%= form_with(model: contact, class:"add-new-contact-form") do |form| %>
+  <div class="row">
+    &nbsp;
+  </div>
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">account_circle</i>
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"validate", autofocus: true %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">account_circle</i>
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, class:"validate" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">phone</i>
+      <%= form.label :telephone %>
+      <%= form.phone_field :telephone %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">email</i>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">location_on</i>
+      <%= form.label :address %>
+      <%= form.text_area :address, class:"materialize-textarea validate" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span><%= form.label :avatar, class:"white-text" %></span>
+        <%= form.file_field :avatar %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </div>
+
+  <% if contact.errors.any? %>
+    <div id="error_explanation" class="row error_explanation">
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,35 @@
+<%= render partial: "components/header" %>
+<div class="container container-contacts">
+  <div class="row">
+    <h3> All Contacts </h3>
+  </div>
+  <div class="row">
+  <ul class="collection">
+    <% @contacts.each do |contact| %>
+    <li class="collection-item avatar">
+      <div class="col s10">
+        <div class="col s1">
+          <%= image_tag contact.avatar, class: "circle materialboxed avatar-img"  if contact.avatar.attached? %>
+        </div>
+        <div class="col s11">
+          <p><i class="material-icons">account_circle</i> <b><%= "#{contact.name} #{contact.last_name}" %></b></p>
+          <p><i class="material-icons">email</i> <%= contact.email %></p>
+          <p><i class="material-icons">local_phone</i> <%= contact.telephone %></p>
+          <p><i class="material-icons">home</i> <%= contact.address %></p>
+        </div>
+      </div>
+      <div class="col s2 contact-links">
+        <p class="row">
+          <%= link_to edit_contact_path(contact), remote: true, class: "center teal-text" do %> <i class="material-icons">edit</i> Edit <% end %>
+        </p>
+        <p class="row">
+          <%= link_to delete_contact_path(contact), remote: true, class: "center teal-text", data: {confirm: "Are you sure?"} do %> <i class="material-icons">delete</i> Delete<% end %>
+        </p>
+      </div>
+    </li>
+    <% end %>
+    </ul>
+    <%= paginate @contacts %>
+</div>
+<%= render partial: "components/modals" %>
+</div>

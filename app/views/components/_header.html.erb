@@ -1,22 +1,24 @@
 <nav>
   <div class="nav-wrapper">
     <a href="#" data-target="slide-out" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
-    <a href="#!" class="brand-logo right">Contact Bucket</a>
+    <%= link_to "Contact Bucket", root_path, class:"brand-logo right", data: {turbolinks:"false"} %>
   </div>
 </nav>
 
-<ul id="slide-out" class="sidenav sidenav-fixed">
+<ul id="slide-out" class="sidenav sidenav-fixed sidenav-right">
   <li><div class="user-view">
     <div class="background">
-      <img src="images/office.jpg">
+        <%= image_tag "profile_bkg" %>
     </div>
-    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-    <a href="#name"><span class="white-text name">John Doe</span></a>
-    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    <a href="#user"><i class="fas fa-user-circle fa-4x white-text"></i></a>
+    <a href="#name"><span class="white-text darken-4 name"><b><%= current_user.name %><b></span></a>
+    <a href="#email"><span class="white-text darken-4 email"><b><%= current_user.email %><b></span></a>
   </div></li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#!">Second Link</a></li>
+  <li><%= link_to explore_path, class: "waves-effect" do %><i class="material-icons">contacts</i>Contacts<% end %></li>
   <li><div class="divider"></div></li>
-  <li><a class="subheader">Subheader</a></li>
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  <li><a class="subheader">Settings</a></li>
+  <li><%= link_to edit_user_registration_path, class: "waves-effect" do %><i class="material-icons">account_circle</i>Profile<% end %></li>
+  <li><%= link_to security_path, class: "waves-effect" do %><i class="material-icons">security</i>Security<% end %></li>
+  <li><div class="divider"></div></li>
+  <li><%= link_to destroy_user_session_path, class: "waves-effect", data: {turbolinks:"false"} do %><i class="material-icons">close</i>Close Session<% end %></li>
 </ul>

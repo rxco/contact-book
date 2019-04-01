@@ -8,7 +8,7 @@
 <ul id="slide-out" class="sidenav sidenav-fixed sidenav-right">
   <li><div class="user-view">
     <div class="background">
-        <%= image_tag "profile_bkg" %>
+        <%= image_tag "profile_bkg.jpg" %>
     </div>
     <a href="#user"><i class="fas fa-user-circle fa-4x white-text"></i></a>
     <a href="#name"><span class="white-text darken-4 name"><b><%= current_user.name %><b></span></a>
@@ -18,7 +18,9 @@
   <li><div class="divider"></div></li>
   <li><a class="subheader">Settings</a></li>
   <li><%= link_to edit_user_registration_path, class: "waves-effect" do %><i class="material-icons">account_circle</i>Profile<% end %></li>
-  <li><%= link_to security_path, class: "waves-effect" do %><i class="material-icons">security</i>Security<% end %></li>
+  <% unless current_user.authy_enabled %>
+    <li><%= link_to user_enable_authy_path, class: "waves-effect", data: {turbolinks:"false"} do %><i class="material-icons">security</i>Enable 2FA<% end %></li>
+  <% end %>
   <li><div class="divider"></div></li>
   <li><%= link_to destroy_user_session_path, class: "waves-effect", data: {turbolinks:"false"} do %><i class="material-icons">close</i>Close Session<% end %></li>
 </ul>

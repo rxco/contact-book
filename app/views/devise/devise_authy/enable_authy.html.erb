@@ -1,7 +1,32 @@
-<h2><%= I18n.t('authy_register_title', {:scope => 'devise'}) %></h2>
-
+<div class="container">
+<div class="row card-panel hoverable">
+<div class="col m6 s12">
+  <div class="row img-login"></div>
+</div>
+<div class="login-form col m6 s12">
 <%= enable_authy_form do %>
+<div class="row center title">
+  <h4 class="teal-text text-lighten-2">Enable Authy</h4>
+  <p> Please ingress an existent phone </p>
+</div>
+<div class="row">
+  <div class="input-field">
+  <%= label_tag :country_code %><br />
   <%= text_field_tag :country_code, '', :autocomplete => :off, :placeholder => I18n.t('devise.country'), :id => "authy-countries"%>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+  <%= label_tag :cellphone %><br />
   <%= text_field_tag :cellphone, '', :autocomplete => :off, :placeholder => I18n.t('devise.cellphone'), :id => "authy-cellphone"%>
-  <p><%= submit_tag I18n.t('enable_authy', {:scope => 'devise'}) %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+    <%= submit_tag I18n.t('enable_authy', {:scope => 'devise'}), class: "btn btn-large waves-effect waves-light col s12 white-text" %>
+  </div>
+</div>
 <% end %>
+</div>
+</div>
+</div>

@@ -15,9 +15,9 @@
 
   <body>
     <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <elsif alert %>
-      <p class="alert"><%= alert %></p>
+      <p class="notice center"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert center"><%= alert %></p>
     <% end %>
     <%= yield %>
   </body>
